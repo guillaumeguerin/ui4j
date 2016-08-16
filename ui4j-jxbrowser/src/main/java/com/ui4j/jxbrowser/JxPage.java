@@ -69,6 +69,10 @@ public class JxPage implements Page {
 
     @Override
     public void show(boolean maximized) {
+    	showFrame(maximized);
+    }
+	
+	public Frame showFrame(boolean maximized, String windowTitle, ImageIcon icon) {
         view = new BrowserView(browser);
 
         frame = new JFrame();
@@ -80,8 +84,10 @@ public class JxPage implements Page {
         frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+		
+		return Frame;
     }
-
+	
     @Override
     public void show() {
         show(false);
